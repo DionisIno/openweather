@@ -21,9 +21,16 @@ class TestMainPage:
         page.open()
         page.check_main_page_title()
 
-    @allure.title("Check search city placeholder")
+    @allure.title("Checking search city placeholder")
     def test_city_search_field_placeholder(self, driver):
         """This test checks that the placeholder contains valid text"""
         page = MainPage(driver, urls.get("BASE_URL"))
         page.open()
         page.check_search_city_input_placeholder()
+
+    @allure.title("Checking that the entered text is visible on the screen")
+    def test_entered_text_is_displayed(self, driver):
+        """This test checks that the entered text is visible on the screen"""
+        page = MainPage(driver, urls.get("BASE_URL"))
+        page.open()
+        page.check_entered_text()
