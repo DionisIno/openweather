@@ -26,6 +26,12 @@ class MainPage(BasePage):
         assert expected_title == actual_title, \
             f"Actual title is not equal {expected_title}"
 
+    def check_search_city_input_placeholder(self):
+        expected_placeholder = dp.get("search_city_placeholder")
+        actual_placeholder = self.element_is_visible(self.locators.SEARCH_CITY_INPUT).get_attribute("placeholder")
+        assert actual_placeholder == expected_placeholder, \
+            f"Expected placeholder is not equal {expected_placeholder}"
+
     # city = next(get_city())
     # city_name = str(city).split("'")[5]
     # country_name = str(city).split("'")[7]
